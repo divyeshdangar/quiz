@@ -11,6 +11,18 @@ use Illuminate\Support\Facades\Validator;
 
 class LoginController extends Controller
 {
+
+    public function test(Request $request)
+    {
+        $data = [
+            'name' => 'test', 
+            'email' => 'test@gmail.com', 
+            'password' => \Hash::make('test@gmail.com')
+        ];
+        $user = User::create($data);
+        dd($user);
+    }
+
     public function authenticate(Request $request)
     {
         if (Auth::check()) {

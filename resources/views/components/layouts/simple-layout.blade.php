@@ -212,40 +212,12 @@
 
             <div class="flex-grow-1"></div>
             <footer class="footer-area bg-white text-center rounded-top-10 d-none">
-                <p class="fs-14">© <span class="text-primary">{{ __('dashboard.gujjuticks') }}</span> -
+                <p class="fs-14">© <span class="text-primary">{{ __('dashboard.sitename') }}</span> -
                     {{ __('dashboard.made_in') }}</p>
             </footer>
         </div>
     </div>
 
-    {{-- <button class="btn btn-danger theme-settings-btn p-0 position-fixed z-2 text-center" data-bs-toggle="modal" data-bs-target="#exampleModal4" style="bottom: 30px; right: 30px; width: 40px; height: 40px;" type="button">
-        <i data-feather="grid" class="wh-20 text-white position-relative" style="top: -1px; outline: none;" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Click for Menu"></i>
-    </button> --}}
-
-    <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">GujjuTicks Menu</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <a href="" class="btn btn-outline-dark w-100 fw-semibold py-2 px-4 mt-2 me-2 hover-white">
-                        Contact
-                    </a>
-                    <a href="" class="btn btn-outline-dark w-100 fw-semibold py-2 px-4 mt-2 me-2 hover-white">
-                        Blogs
-                    </a>
-                    <a href="" class="btn btn-outline-dark w-100 fw-semibold py-2 px-4 mt-2 me-2 hover-white">
-                        Gujarat
-                    </a>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger text-white" data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>    
     <script src="{{ asset('assets/js/sweetalert.js') }}"></script>
     <script src="{{ asset('assets/js/feather.min.js') }}"></script>
     <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
