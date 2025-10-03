@@ -9,10 +9,18 @@ use App\Http\Middleware\CheckLanguage;
 
 use App\Http\Controllers\Dashboard\BlogController;
 use App\Http\Controllers\Dashboard\BlogCategoryController;
-use App\Http\Controllers\Dashboard\ProfileController;
 use App\Http\Controllers\Dashboard\UserController;
 use App\Http\Controllers\Dashboard\NotificationController;
 use App\Http\Controllers\Dashboard\ContactController;
+use Illuminate\Routing\Middleware\SubstituteBindings;
+
+use App\Http\Controllers\Api\TaskController;
+
+Route::prefix('api')
+    ->middleware([SubstituteBindings::class, 'throttle:60,1'])
+    ->group(function () {
+        Route::get('/task', [TaskController::class, 'show'])->name('task.show');
+    });
 
 
 Route::get('/', function () {
@@ -64,6 +72,4 @@ Route::middleware([CheckIfLogin::class, CheckLanguage::class])->group(function (
     Route::post('dashboard/blog-category/edit/{id}', [BlogCategoryController::class, 'store'])->name('dashboard.blog.category.edit.post');
     Route::get('dashboard/blog-category/view/{id}', [BlogCategoryController::class, 'view'])->name('dashboard.blog.category.view');
     Route::get('dashboard/blog-category/delete/{id}', [BlogCategoryController::class, 'delete'])->name('dashboard.blog.category.delete');
-
-
 });

@@ -13,7 +13,7 @@ class TaskListOptions extends Model
     const TYPE_TEXT     = 'text';
     const TYPE_TEXTAREA = 'textarea';
     const TYPE_POLL     = 'poll';
-    
+
     protected $fillable = [
         'title',
         'type',
@@ -24,4 +24,9 @@ class TaskListOptions extends Model
     protected $casts = [
         'is_right' => 'boolean',
     ];
+
+    public function taskList()
+    {
+        return $this->belongsTo(TaskList::class);
+    }
 }

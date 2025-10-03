@@ -23,4 +23,14 @@ class TaskList extends Model
         'total_time' => 'integer',
         'is_timebase' => 'boolean',
     ];
+
+    public function options()
+    {
+        return $this->hasMany(TaskListOptions::class);
+    }
+
+    public function task()
+    {
+        return $this->belongsTo(Task::class);
+    }
 }

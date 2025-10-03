@@ -14,7 +14,7 @@ class Task extends Model
     const TYPE_FORM   = 'form';
     const TYPE_POLL   = 'poll';
     const TYPE_REVIEW = 'review';
-    
+
     protected $fillable = [
         'user_id',
         'type',
@@ -42,5 +42,10 @@ class Task extends Model
     public function category(): BelongsTo
     {
         return $this->belongsTo(TaskCategory::class, 'task_category_id');
+    }
+
+    public function lists()
+    {
+        return $this->hasMany(TaskList::class);
     }
 }

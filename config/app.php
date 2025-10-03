@@ -127,4 +127,6 @@ return [
     'aliases' => Facade::defaultAliases()->merge([
         'CommonHelper' => App\Helpers\CommonHelper::class,
     ])->toArray(),
+
+    'api_key' => env('API_KEY', 'MY_SECRET_KEY'),
 ];
