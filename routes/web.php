@@ -12,16 +12,6 @@ use App\Http\Controllers\Dashboard\BlogCategoryController;
 use App\Http\Controllers\Dashboard\UserController;
 use App\Http\Controllers\Dashboard\NotificationController;
 use App\Http\Controllers\Dashboard\ContactController;
-use Illuminate\Routing\Middleware\SubstituteBindings;
-
-use App\Http\Controllers\Api\TaskController;
-
-Route::prefix('api')
-    ->middleware([SubstituteBindings::class, 'throttle:60,1'])
-    ->group(function () {
-        Route::get('/task', [TaskController::class, 'show'])->name('task.show');
-    });
-
 
 Route::get('/', function () {
     return view('welcome');

@@ -13,7 +13,10 @@ class TaskSubmission extends Model
     protected $fillable = [
         'task_id',
         'user_id',
+        'result',
         'response',
+        'description',
+        'remarks',
         'name',
     ];
 
