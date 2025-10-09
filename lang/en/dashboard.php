@@ -146,5 +146,11 @@ return [
     'record_deleted' => 'Record deleted successfully.',
     'record_restored' => 'Record restored successfully.',
     'canvas_to_json' => 'Canvas to JSON',
+    'task_category' => 'Task Category',
+    'is_timebase' => 'Is time based?',
+    'is_individual' => 'Is individual?',
+    'task' => 'Task',
+    'total_time' => 'Total Time',
+    'in_minutes' => 'In Minutes',
     'icon' => 'Icon'
 ];

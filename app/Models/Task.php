@@ -10,6 +10,12 @@ class Task extends Model
 {
     use SoftDeletes;
 
+    protected $searchable = [
+        'code',
+        'title',
+        'description'
+    ];
+
     const TYPE_MCQ    = 'mcq';
     const TYPE_FORM   = 'form';
     const TYPE_POLL   = 'poll';
@@ -27,6 +33,16 @@ class Task extends Model
         'is_individual',
         'image',
     ];
+
+    public function scopeSearching($q)
+    {
+        if (request('search')) {
+            foreach ($this->searchable as $key => $value) {
+                $q->orwhere($value, 'LIKE', '%' . request('search') . '%');
+            }
+        }
+        return $q;
+    }
 
     protected $casts = [
         'total_time' => 'integer',

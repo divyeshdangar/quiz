@@ -12,6 +12,7 @@ use App\Http\Controllers\Dashboard\BlogCategoryController;
 use App\Http\Controllers\Dashboard\UserController;
 use App\Http\Controllers\Dashboard\NotificationController;
 use App\Http\Controllers\Dashboard\ContactController;
+use App\Http\Controllers\Dashboard\TaskController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -55,6 +56,14 @@ Route::middleware([CheckIfLogin::class, CheckLanguage::class])->group(function (
     Route::post('dashboard/blog/edit/{id}', [BlogController::class, 'store'])->name('dashboard.blog.edit.post');
     Route::get('dashboard/blog/view/{id}', [BlogController::class, 'view'])->name('dashboard.blog.view');
     Route::get('dashboard/blog/delete/{id}', [BlogController::class, 'delete'])->name('dashboard.blog.delete');
+
+    Route::get('dashboard/task', [TaskController::class, 'index'])->name('dashboard.task');
+    Route::get('dashboard/task/create', [TaskController::class, 'create'])->name('dashboard.task.create');
+    Route::get('dashboard/task/edit/{id}', [TaskController::class, 'edit'])->name('dashboard.task.edit');
+    Route::post('dashboard/task/edit/{id}', [TaskController::class, 'store'])->name('dashboard.task.edit.post');
+    Route::get('dashboard/task/view/{id}', [TaskController::class, 'view'])->name('dashboard.task.view');
+    Route::get('dashboard/task/list/{id}', [TaskController::class, 'list'])->name('dashboard.task.list');
+    Route::get('dashboard/task/delete/{id}', [TaskController::class, 'delete'])->name('dashboard.task.delete');
 
     Route::get('dashboard/blog-category', [BlogCategoryController::class, 'index'])->name('dashboard.blog.category');
     Route::get('dashboard/blog-category/create', [BlogCategoryController::class, 'create'])->name('dashboard.blog.category.create');

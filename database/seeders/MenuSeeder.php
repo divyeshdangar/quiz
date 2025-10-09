@@ -37,6 +37,15 @@ class MenuSeeder extends Seeder
                 "type" => "2"
             ],
             [
+                "id" => 3, 
+                "icon" => "smartphone", 
+                "title" => 'dashboard.task', 
+                "route" => "dashboard.task",
+                "order" => 3,
+                "title_only" => "0",
+                "type" => "2"
+            ],
+            [
                 "id" => 5, 
                 "icon" => "", 
                 "title" => 'dashboard.public_features', 
